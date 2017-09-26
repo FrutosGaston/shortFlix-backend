@@ -25,7 +25,7 @@ public class SampleResource {
     }
 
     private Short pennywise() {
-      return new Short(1, "Pennywise", "https://images-na.ssl-images-amazon.com/images/I/51n0RsXCQqL.jpg",
+      return new Short(1, "It", "https://images-na.ssl-images-amazon.com/images/I/51n0RsXCQqL.jpg",
         "In 1960, seven pre-teen outcasts fight an evil demon who poses as a child-killing clown. Thirty years later, they reunite to stop the demon once and for all when it returns to their hometown.",
         6.9, "http://www.imdb.com/title/tt0099864/", 1990, Arrays.asList("Drama", "Fantasy", "Horror"), "3h 12min",
         Arrays.asList("Stephen King"), Arrays.asList("Richard Thomas" , "Tim Reid", "Annette O`Toole"), Arrays.asList("Andy Muschietti"),
