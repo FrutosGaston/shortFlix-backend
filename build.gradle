@@ -39,3 +39,14 @@ eclipse {
 		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
 	}
 }
+
+sourceSets.main.java.srcDirs = [ "src/main/java/" ]
+sourceSets.test.java.srcDirs = [ "src/test/java/" ]
+
+test {
+	testLogging {
+		showStandardStreams = true
+		events "standardOut", "passed", "skipped", "failed"
+		exceptionFormat = 'full'
+	}
+}
