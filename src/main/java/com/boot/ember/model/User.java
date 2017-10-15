@@ -2,15 +2,18 @@ package com.boot.ember.model;
 
 import java.util.ArrayList;
 
+import org.hibernate.annotations.DynamicUpdate;
+
+@DynamicUpdate
 public class User {
 	private TypeOfUser typeOfUser;
 	private String name;
 	
 	private String email;
 	private String password;
-	private ArrayList<Short> favourites = new ArrayList<Short>();
-	private ArrayList<Short> alreadySeen = new ArrayList<Short>();
-	private ArrayList<Short> directed = new ArrayList<Short>();
+	private ArrayList<ShortFilm> favourites = new ArrayList<ShortFilm>();
+	private ArrayList<ShortFilm> alreadySeen = new ArrayList<ShortFilm>();
+	private ArrayList<ShortFilm> directed = new ArrayList<ShortFilm>();
 	
 	public static final String NOT_A_DIRECTOR_MESSAGE = "You can't edit movies";
 	
@@ -21,27 +24,27 @@ public class User {
 		this.password = password;
 	}
 	
-	public void addShortToFavourites(Short aShort){
+	public void addShortToFavourites(ShortFilm aShort){
 		favourites.add(aShort);
 	}
 	
-	public void addShortToAlreadySeen(Short aShort){
+	public void addShortToAlreadySeen(ShortFilm aShort){
 		alreadySeen.add(aShort);
 	}
 	
-	public void removeFromFavourites(Short aShort){
+	public void removeFromFavourites(ShortFilm aShort){
 		favourites.removeIf(s -> s.getId()==aShort.getId());
 	}
 	
 	public void cleanHistory(){
-		alreadySeen = new ArrayList<Short>();
+		alreadySeen = new ArrayList<ShortFilm>();
 	}
 	
 	public void cleanFavourites(){
-		favourites = new ArrayList<Short>();
+		favourites = new ArrayList<ShortFilm>();
 	}
 	
-	public void changeDescription(Short aShort){
+	public void changeDescription(ShortFilm aShort){
 		typeOfUser.changeDescription(aShort, this);
 	}
 
@@ -49,11 +52,11 @@ public class User {
 		throw new RuntimeException(NOT_A_DIRECTOR_MESSAGE);
 	}
 	
-	public void addDirected(Short aShort){
+	public void addDirected(ShortFilm aShort){
 		directed.add(aShort);
 	}
 	
-	public void removeFromDirected(Short aShort){
+	public void removeFromDirected(ShortFilm aShort){
 		directed.removeIf(s -> s.getId()==aShort.getId());
 	}
 	
@@ -61,15 +64,15 @@ public class User {
 		this.typeOfUser = new DirectorUser();
 	}
 	
-	public ArrayList<Short> getFavourites() {
+	public ArrayList<ShortFilm> getFavourites() {
 		return favourites;
 	}
 
-	public ArrayList<Short> getAlreadySeen() {
+	public ArrayList<ShortFilm> getAlreadySeen() {
 		return alreadySeen;
 	}
 
-	public ArrayList<Short> getDirected() {
+	public ArrayList<ShortFilm> getDirected() {
 		return directed;
 	}
 

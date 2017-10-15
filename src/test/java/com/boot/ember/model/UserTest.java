@@ -9,12 +9,12 @@ import org.junit.Test;
 
 public class UserTest {
 	
-	private Short mockShort;
+	private ShortFilm mockShort;
 	private User newUser;
 	
 	@Before
 	public void setUp(){
-		mockShort = mock(Short.class);
+		mockShort = mock(ShortFilm.class);
 		newUser = new User("Spielberg","et@gmail.com", "et");
 	}
 

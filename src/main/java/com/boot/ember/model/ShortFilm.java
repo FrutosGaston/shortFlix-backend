@@ -2,21 +2,35 @@ package com.boot.ember.model;
 
 import java.util.List;
 
-public class Short {
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-    private final long id;
+@Entity
+public class ShortFilm {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
+    private long shortFilmId;
     private String title;
     private String cover;
     private String description;
     private double score;
     private String imdb;
     private Integer year;
+    @ElementCollection(targetClass=String.class)
     private List<String> genres, actors, writers, directors;
     private String duration;
     private String video;
 
-    public Short(long id, String title, String cover, String description, double score, String imdb, Integer year, List<String> genres, String duration, List<String> writers, List<String> actors, List<String> directors, String video) {
-        this.id = id;
+    public ShortFilm(){
+    	}
+    
+    public ShortFilm(String title, String cover, String description, double score,
+    			 String imdb, Integer year, List<String> genres, String duration, 
+    			 List<String> writers, List<String> actors, List<String> directors, String video) {
         this.title = title;
         this.cover = cover;
         this.description = description;
@@ -32,7 +46,7 @@ public class Short {
     }
 
     public long getId() {
-        return id;
+        return shortFilmId;
     }
 
     public String getTitle() {
