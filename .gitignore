@@ -1,2 +1,10 @@
 .idea
 .gradle
+
+#Eclipse:
+
+.classpath
+.project
+.settings/
+bin/
+tmp/
