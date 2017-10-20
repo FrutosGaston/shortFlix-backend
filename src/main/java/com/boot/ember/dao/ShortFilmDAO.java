@@ -14,5 +14,12 @@ public class ShortFilmDAO {
 		return null;
 		});
 	}
+	
+	public ShortFilm get(long id){
+		return Runner.runInSession(() -> {
+			Session session = Runner.getCurrentSession();
+			return session.get(ShortFilm.class, id);
+			});
+	}
 
 }

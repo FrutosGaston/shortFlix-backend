@@ -1,27 +1,39 @@
 package com.boot.ember.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-@DynamicUpdate
+@Entity
 public class User {
-	private TypeOfUser typeOfUser;
+	//private TypeOfUser typeOfUser;
 	private String name;
-	
+	@Id
 	private String email;
 	private String password;
-	private ArrayList<ShortFilm> favourites = new ArrayList<ShortFilm>();
-	private ArrayList<ShortFilm> alreadySeen = new ArrayList<ShortFilm>();
-	private ArrayList<ShortFilm> directed = new ArrayList<ShortFilm>();
+	@OneToMany
+	private List<ShortFilm> favourites = new ArrayList<ShortFilm>();
+	@OneToMany
+	private List<ShortFilm> alreadySeen = new ArrayList<ShortFilm>();
+	@OneToMany
+	private List<ShortFilm> directed = new ArrayList<ShortFilm>();
 	
 	public static final String NOT_A_DIRECTOR_MESSAGE = "You can't edit movies";
 	
 	public User(String name, String email, String password){
-		this.typeOfUser = new RegisteredUser();
+		//this.typeOfUser = new RegisteredUser();
 		this.name = name;
 		this.email = email;
 		this.password = password;
+	}
+	
+	public User(){
 	}
 	
 	public void addShortToFavourites(ShortFilm aShort){
@@ -45,7 +57,7 @@ public class User {
 	}
 	
 	public void changeDescription(ShortFilm aShort){
-		typeOfUser.changeDescription(aShort, this);
+	//	typeOfUser.changeDescription(aShort, this);
 	}
 
 	public Object notADirectorException(){
@@ -61,19 +73,23 @@ public class User {
 	}
 	
 	public void becomingDirector(){
-		this.typeOfUser = new DirectorUser();
+	//	this.typeOfUser = new DirectorUser();
 	}
 	
-	public ArrayList<ShortFilm> getFavourites() {
+	public List<ShortFilm> getFavourites() {
 		return favourites;
 	}
 
-	public ArrayList<ShortFilm> getAlreadySeen() {
+	public List<ShortFilm> getAlreadySeen() {
 		return alreadySeen;
 	}
 
-	public ArrayList<ShortFilm> getDirected() {
+	public List<ShortFilm> getDirected() {
 		return directed;
+	}
+	
+	public String getEmail(){
+		return email;
 	}
 
 }

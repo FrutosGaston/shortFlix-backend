@@ -4,9 +4,13 @@ import java.util.List;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 public class ShortFilm {
@@ -20,7 +24,8 @@ public class ShortFilm {
     private double score;
     private String imdb;
     private Integer year;
-    @ElementCollection(targetClass=String.class)
+    @Fetch(FetchMode.SELECT)
+    @ElementCollection(targetClass=String.class, fetch = FetchType.EAGER)
     private List<String> genres, actors, writers, directors;
     private String duration;
     private String video;
