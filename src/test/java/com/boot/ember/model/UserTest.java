@@ -57,16 +57,5 @@ public class UserTest {
 		assertEquals(0, newUser.getAlreadySeen().size());
 	}
 	
-	@Test
-	public void testNewUserIsJustARegisteredUser() {
-		
-		try {
-			newUser.changeDescription(mockShort);
-			fail();
-		} catch (Exception notADirector){
-			
-			assertEquals(User.NOT_A_DIRECTOR_MESSAGE,notADirector.getMessage());
-		}
-	}
 
 }

@@ -27,7 +27,6 @@ public class User {
 	public static final String NOT_A_DIRECTOR_MESSAGE = "You can't edit movies";
 	
 	public User(String name, String email, String password){
-		//this.typeOfUser = new RegisteredUser();
 		this.name = name;
 		this.email = email;
 		this.password = password;

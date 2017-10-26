@@ -4,11 +4,13 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import org.junit.Test;
 
 import com.boot.ember.dao.UserDAO;
+import com.boot.ember.model.Director;
 import com.boot.ember.model.ShortFilm;
 import com.boot.ember.model.User;
 
@@ -31,6 +33,7 @@ public class ShortflixServiceTest {
 		List<String> expectedGenres = Arrays.asList("Animation");
 		assertEquals("George and AJ", georgeAndAJSF.getTitle());
 		assertEquals(expectedGenres, georgeAndAJSF.getGenres());
+		
 	}
 	
 	@Test
