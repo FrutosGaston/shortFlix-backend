@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -28,7 +29,9 @@ public class ShortFilm {
     private Integer year;
     @Fetch(FetchMode.SELECT)
     @ElementCollection(targetClass=String.class, fetch = FetchType.EAGER)
-    private List<String> genres, actors, writers, directors;
+    private List<String> genres, actors, writers;
+    @Transient
+    private Set<Director> directors;
     private String duration;
     private String video;
 
@@ -37,7 +40,7 @@ public class ShortFilm {
     
     public ShortFilm(String title, String cover, String description, double score,
     			 String imdb, Integer year, List<String> genres, String duration, 
-    			 List<String> writers, List<String> actors, List<String> directors, String video) {
+    			 List<String> writers, List<String> actors, Set<Director> directors, String video) {
         this.title = title;
         this.cover = cover;
         this.description = description;
@@ -96,7 +99,7 @@ public class ShortFilm {
     return actors;
   }
 
-  public List<String> getDirectors() {
+  public Set<Director> getDirectors() {
     return directors;
   }
 

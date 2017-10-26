@@ -23,6 +23,7 @@
 
 		<mapping class="com.boot.ember.model.ShortFilm" />
 		<mapping class="com.boot.ember.model.User" />
+		<mapping class="com.boot.ember.model.Director" />
 
 	
 	</session-factory>

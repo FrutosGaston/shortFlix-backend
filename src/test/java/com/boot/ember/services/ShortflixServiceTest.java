@@ -23,11 +23,13 @@ public class ShortflixServiceTest {
 	public void test_creation_of_short_in_db() {
 		
 		this.shortflixService = new ShortflixService();
+		Director director = new Director("Josh Cooley");
+		
 		// short 1: George and AJ
 		this.shortflixService.getShortFilmDAO().save(new ShortFilm("George and AJ", "", 
 		"Exclusive Pixar short featuring George and AJ, character from the feature film Up",
 		0.0, "", 2009, Arrays.asList("Animation"),"4:04", Arrays.asList("Josh Cooley"), 
-		Arrays.asList("Jason Topolski", "A.J. Rienli III"), Arrays.asList("Josh Cooley"), 
+		Arrays.asList("Jason Topolski", "A.J. Rienli III"),new HashSet<Director>(Arrays.asList(director)), 
 		"https://www.youtube.com/watch?v=hF5KWMX3u4Y"));
 		ShortFilm georgeAndAJSF = this.shortflixService.getShortFilmDAO().get(1L);
 		List<String> expectedGenres = Arrays.asList("Animation");
