@@ -15,7 +15,8 @@ Curso | | Referencia
     * Actor puede cerrar sesión en cualquier momento.
     * Actor puede dar pausa/adelantar/retrasar el video mientras lo visualiza.
     * Luego de seleccionarlo, el actor puede puntuar el video en cualquier momento.
-    * 
+    
+ 
 ## C02: usuario se registra
 * Descripción: usuario se registra en el sistema.
 * Actor: usuario no registrado en el sistema.
