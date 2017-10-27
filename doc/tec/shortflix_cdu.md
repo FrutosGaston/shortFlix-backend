@@ -70,6 +70,7 @@ Curso | | Referencia
 6| Fin de caso de uso.
 
 * Casos excepcionales:
+ 
 Paso|Excepcion|
 ---|---|
 3a.2, 3b.2|Ver casos excepcionales 4a.2, 4b.2 de C02. |
