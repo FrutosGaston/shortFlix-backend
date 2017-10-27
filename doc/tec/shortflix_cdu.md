@@ -8,7 +8,7 @@
 Curso | | Referencia
 ------|-------|-----
 1| El usuario ingresa al sistema.|
-2| El usuario elije alguno de los cortos de la pagina principal|
+2| El usuario elige alguno de los cortos de la pagina principal|
 3| El sistema muestra el corto junto con una breve descripción e información adicional(usuario que lo subió, puntuación, etc)|
 4| Fin del caso de uso.
 * Cursos secundarios:
@@ -28,8 +28,8 @@ Curso | | Referencia
 1| El usuario ingresa al sistema.|
 2| El usuario ingresa a la sección 'registrarse'.|
 3| El sistema muestra las opciones de registro: Facebook, Google o cuenta de Shortflix.|
-4.a.1| El usuario elije registrarse con Facebook. | SubF-01
-4.b.2| El usuario presiona elije registrarse con Google. | SubF-02
+4.a.1| El usuario elige registrarse con Facebook. | SubF-01
+4.b.2| El usuario presiona elige registrarse con Google. | SubF-02
 4.b.3| El usuario decide crear una cuenta de Shortflix.| SubF-03 
 5| El sistema crea un nuevo usuario con los datos recibidos.
 6| Fin de caso de uso.
@@ -65,9 +65,9 @@ Curso | | Referencia
 ------|-------|-----
 1| El usuario ingresa al sistema.|
 2| El ingresa a la sección 'Iniciar sesión'.|
-3.a.1| El usuario elije iniciar sesión con Facebook. | SubF-01
-3.b.2| El usuario elije iniciar sesión con Google. | SubF-02
-3.b.3| El usuario elije inciar sesión con Shortflix.| SubF-03 
+3.a.1| El usuario elige iniciar sesión con Facebook. | SubF-01
+3.b.2| El usuario elige iniciar sesión con Google. | SubF-02
+3.b.3| El usuario elige inciar sesión con Shortflix.| SubF-03 
 5| El sistema autentica al usuario.
 6| Fin de caso de uso.
 
