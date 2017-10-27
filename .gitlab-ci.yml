@@ -1,5 +1,14 @@
 image: openjdk:8-jdk
 
+services:
+  - mysql:latest
+
+variables:
+  MYSQL_ROOT_PASSWORD: root
+  MYSQL_USER: root
+  MYSQL_PASSWORD: root
+  MYSQL_DATABASE: shortflix
+
 stages:
   - build
   - test
