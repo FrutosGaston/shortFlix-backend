@@ -15,7 +15,8 @@ Curso | | Referencia
     * Actor puede cerrar sesión en cualquier momento.
     * Actor puede dar pausa/adelantar/retrasar el video mientras lo visualiza.
     * Luego de seleccionarlo, el actor puede puntuar el video en cualquier momento.
-## C01: usuario se registra
+    * 
+## C02: usuario se registra
 * Descripción: usuario se registra en el sistema.
 * Actor: usuario no registrado en el sistema.
 * Precondición: ninguna.
@@ -53,8 +54,8 @@ Paso|Excepcion|
 4c.2| Usuario utiliza un mail existente en la base de datos del sistema.
 5a.3, 5b.3, 5c.3| El usuario no puede ser registrado.
 
-## C03: usuario inicia sesion
-* Descripción: usuario inicia sesion en el sistema.
+## C03: usuario inicia sesión
+* Descripción: usuario inicia sesión en el sistema.
 * Actor: usuario no registrado en el sistema.
 * Precondición: ninguna.
 * Curso normal:
@@ -62,7 +63,7 @@ Paso|Excepcion|
 Curso | | Referencia
 ------|-------|-----
 1| El usuario ingresa al sistema.|
-2| El ingresa a la sección 'Iniciar sesion'.|
+2| El ingresa a la sección 'Iniciar sesión'.|
 3.a.1| El usuario elije iniciar sesión con Facebook. | SubF-01
 3.b.2| El usuario elije iniciar sesión con Google. | SubF-02
 3.b.3| El usuario elije inciar sesión con Shortflix.| SubF-03 
