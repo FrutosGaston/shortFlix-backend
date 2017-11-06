@@ -2,11 +2,8 @@ package com.boot.ember.api;
 
 import com.boot.ember.model.Director;
 import com.boot.ember.model.ShortFilm;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -14,12 +11,20 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
-public class SampleResource {
+public class ShortsResource {
 
+    @CrossOrigin
     @RequestMapping(value = "/api/shorts", method = RequestMethod.GET)
     public List<ShortFilm> getShorts() {
         return dummy_movies();
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/api/short/{id}", method = RequestMethod.GET)
+    public ShortFilm getShort(@PathVariable("id") long id) {
+        return dummy_movies().get((int) id);
+    }
+
 
     private List<ShortFilm> dummy_movies() {
       List<ShortFilm> list = new ArrayList<>();

@@ -5,6 +5,10 @@ import org.hibernate.Session;
 import com.boot.ember.model.ShortFilm;
 import com.boot.ember.service.runner.Runner;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.List;
+
 public class ShortFilmDAO {
 	
 	public void save(ShortFilm shortFilm) {
@@ -22,4 +26,12 @@ public class ShortFilmDAO {
 			});
 	}
 
+	/*public List<ShortFilm> allShorts() {
+		return Runner.runInSession(() -> {
+			Session session = Runner.getCurrentSession();
+            String jpql = "select e from ShortFilm e";
+            List<ShortFilm> shorts = session.createQuery(jpql, ShortFilm.class).getResultList();
+            return shorts;
+		});
+	}*/
 }
